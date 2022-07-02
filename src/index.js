@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const getAllUsers = require('./endpoints/getAllUsers')
+const getAllClients = require('./endpoints/getAllClients')
 const createClient = require('./endpoints/createClient')
 const getClientById = require('./endpoints/getClientById')
 const getClientByEmaail = require('./endpoints/getClientByEmail')
@@ -21,6 +22,7 @@ app.use(cors())
 
 
 app.get('/clients', getAllUsers)
+app.get('/users', getAllClients)
 app.get('/client/:id', getClientById)
 app.get('/client/requests/:id', requestsByClient)
 app.get('/client/place/:id', clientsByPlace)

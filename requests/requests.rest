@@ -40,13 +40,17 @@ Content-Type: application/json
 
 
 {
-    "email": "dog@email.com",
+    "email": "kaah@email.com",
     "senha": "senha"
 }
 
 
 ###
 GET http://localhost:3003/clients
+
+
+###
+GET http://localhost:3003/users
 
 
 ###

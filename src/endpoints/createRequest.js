@@ -23,7 +23,7 @@ const createRequest = async(req, res)=>{
         }
 
 
-        const [cliente] = await con('concierge_clientes').where({
+        const [cliente] = await con('concierge_usuarios').where({
             id: tokenData.payload
         })
         
