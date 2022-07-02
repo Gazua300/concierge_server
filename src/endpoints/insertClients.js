@@ -7,14 +7,7 @@ const insertClients = async(req, res)=>{
     var statusCode = 400
     try{
 
-        const token = req.headers.authorization
-        const tokenData = new Authentication().tokenData(token)
         const { nome, mesa } = req.body
-
-        if(!token){
-            statusCode = 401
-            throw new Error('Token inválido, expirado ou ausente!')
-        }
         
         
         if(!mesa){
@@ -31,7 +24,7 @@ const insertClients = async(req, res)=>{
             id,
             nome,
             mesa,
-            estabelecimento: tokenData.payload
+            estabelecimento: req.params.id
         })
                 
 
