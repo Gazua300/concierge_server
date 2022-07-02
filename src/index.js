@@ -14,6 +14,7 @@ const requestsByClient = require('./endpoints/requestsByClient')
 const clientsByPlace = require('./endpoints/clientsByPlace')
 const insertCardapio = require('./endpoints/insertCardapio')
 const cardapioByPlace = require('./endpoints/cardapioByPlace')
+const cardapioById = require('./endpoints/cardapioById')
 
 
 
@@ -29,6 +30,7 @@ app.get('/client/:id', getClientById)
 app.get('/client/requests/:id', requestsByClient)
 app.get('/client/place/:id', clientsByPlace)
 app.get('/cardapio/:id', cardapioByPlace)
+app.get('/cardapio/user/:id', cardapioById)
 app.post('/client', createClient)
 app.post('/client/email', getClientByEmaail)
 app.post('/user/client/:id', insertClients)

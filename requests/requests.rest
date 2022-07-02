@@ -93,3 +93,9 @@ GET http://localhost:3003/client/requests/fd7e6e93-651f-43ff-95f6-ed5e45ece281
 GET http://localhost:3003/client/place/f183aa08-a481-4b2a-a437-6cdef8360547
 
 
+###
+get http://localhost:3003/cardapio/f183aa08-a481-4b2a-a437-6cdef8360547
+
+
+###
+get http://localhost:3003/cardapio/user/7bade194-a3af-4792-a676-b366c067995a
