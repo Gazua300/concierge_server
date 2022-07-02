@@ -6,17 +6,17 @@ const getClientById = async(req, res)=>{
     var statusCode = 400
     try{
         
-        const [client] = await con('concierge').where({
+        const [cliente] = await con('concierge_clientes').where({
             id: req.params.id
         })
 
-        if(!client){
+        if(!cliente){
             statusCode = 404
             throw new Error('Cliente não encontrado')
         }
 
 
-        res.status(200).send(client)
+        res.status(200).send(cliente)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }

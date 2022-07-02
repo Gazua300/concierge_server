@@ -9,7 +9,8 @@ const createRequest = async(req, res)=>{
 
         const token = req.headers.authorization
         const tokenData = new Authentication().tokenData(token)
-        const { pedido } = req.body
+        const id = new Authentication().idGenerator()
+        const { pedido, mesa } = req.body
 
         if(!token){
             statusCode = 401
@@ -22,13 +23,29 @@ const createRequest = async(req, res)=>{
         }
 
 
-        const [numero] = await con('concierge_pedidos').count('ordem').where({
+        const [cliente] = await con('concierge_clientes').where({
             id: tokenData.payload
         })
-
-        console.log(Number(Object.values(numero)))
         
+        if(!cliente){
+            statusCode = 404
+            throw new Error('Cliente não encontrado')
+        }
 
+
+        const [numero] = await con('concierge_pedidos').count('ordem').where({
+            cliente: cliente.id
+        })
+
+                
+        await con('concierge_pedidos').insert({
+            id,
+            mesa: cliente.mesa,
+            pedido,
+            ordem: Number(Object.values(numero)) + 1,
+            cliente: cliente.id
+        })
+        
         
         res.status(200).end()
     }catch(e){

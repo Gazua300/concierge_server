@@ -30,7 +30,18 @@ Content-Type: application/json
 
 {
     "email": "dog@email.com",
-    "senha": "se"
+    "senha": "senha"
+}
+
+
+###
+post http://localhost:3003/user/login
+Content-Type: application/json
+
+
+{
+    "email": "fran@email.com",
+    "senha": "senha"
 }
 
 
@@ -39,7 +50,7 @@ GET http://localhost:3003/clients
 
 
 ###
-GET http://localhost:3003/client/485cf076-48df-4b4f-a0e0-b20b8f82819d
+GET http://localhost:3003/client/2a0502d5-52aa-4b7d-883d-27edada69897
 
 
 ###
@@ -65,4 +76,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZjE4M2FhMDgt
 
 
 ###
-post http://localhost:3003
+post http://localhost:3003/user/request
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmEwNTAyZDUtNTJhYS00YjdkLTg4M2QtMjdlZGFkYTY5ODk3IiwiaWF0IjoxNjU2NzMyMDg3LCJleHAiOjE2NTY3NzUyODd9.qeNA0GZZGUBDSiEnV2L2_1ghbQo_1HZnbYv_qQIW5NY
+
+
+{
+    "pedido": "3 latinhas heinekein"
+}

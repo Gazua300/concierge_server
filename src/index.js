@@ -8,6 +8,8 @@ const getClientByEmaail = require('./endpoints/getClientByEmail')
 const insertClients = require('./endpoints/insertClients')
 const login = require('./endpoints/login')
 const createUser = require('./endpoints/createUser')
+const loginUser = require('./endpoints/loginUser')
+const createRequest = require('./endpoints/createRequest')
 
 
 
@@ -23,6 +25,8 @@ app.post('/client/email', getClientByEmaail)
 app.post('/user/client', insertClients)
 app.post('/client/login', login)
 app.post('/user', createUser)
+app.post('/user/login', loginUser)
+app.post('/user/request', createRequest)
 
 
 // const id = new Authentication().idGenerator()

@@ -3,11 +3,41 @@ const Authentication = require('../services/Authentication')
 
 
 
-const loginuser = async(req, res)=>{
+const loginUser = async(req, res)=>{
     var statusCode = 400
     try{
 
+        const { email, senha } = req.body
+
+        if(!email || !senha){
+            statusCode = 401
+            throw new Error('Preencha os campos')
+        }
+
+
+        const [usuario] = await con('concierge_usuarios').where({
+            email
+        })
+
+        if(!usuario){
+            statusCode = 404
+            throw new Error('Usuário não encontrado')
+        }
+
+
+        const compare = new Authentication().compare(senha, usuario.senha)
+        const token = new Authentication().token(usuario.id)
+
+        if(!compare){
+            statusCode = 403
+            throw new Error('Senha incorreta')
+        }
+
+
+        res.status(200).send(token)        
     }catch(e){
-        res.status(statusCode)
+        res.status(statusCode).send(e.message || e.sqlMessage)
     }
 }
+
+module.exports = loginUser
