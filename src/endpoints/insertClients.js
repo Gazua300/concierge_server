@@ -9,27 +9,23 @@ const insertClients = async(req, res)=>{
 
         const token = req.headers.authorization
         const tokenData = new Authentication().tokenData(token)
-        const { nome, mesa } = req.body
-        
-        
-        if(!mesa){
-            statusCode = 401
-            throw new Error('Preencha os campos obrigatórios')
-        }
+        const id = new Authentication().idGenerator()
 
 
         const [usuario] = await con('concierge_usuarios').where({
-            id: token
+            id: tokenData.payload
         })
 
+        if(!usuario){
+            statusCode = 404
+            throw new Error('Cliente não encontrado. Algo pode ter dado errado a melhor opção e sair da sua conta e relogar novamente')
+        }
 
-        const id = new Authentication().idGenerator()       
 
         
         await con(`concierge_clientes`).insert({
             id,
-            nome,
-            mesa,
+            nome: usuario.nome,
             estabelecimento: req.params.id
         })
                 
