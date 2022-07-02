@@ -70,17 +70,21 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZjE4M2FhMDgt
 
 
 {
-    "nome": "Paulo",
-    "mesa": 5    
+    "nome": "Mario",
+    "mesa": 3    
 }
 
 
 ###
-post http://localhost:3003/user/request
+POST http://localhost:3003/user/request
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiMmEwNTAyZDUtNTJhYS00YjdkLTg4M2QtMjdlZGFkYTY5ODk3IiwiaWF0IjoxNjU2NzMyMDg3LCJleHAiOjE2NTY3NzUyODd9.qeNA0GZZGUBDSiEnV2L2_1ghbQo_1HZnbYv_qQIW5NY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZmQ3ZTZlOTMtNjUxZi00M2ZmLTk1ZjYtZWQ1ZTQ1ZWNlMjgxIiwiaWF0IjoxNjU2NzQ3ODM2LCJleHAiOjE2NTY3OTEwMzZ9.g7xCTBMh1xwG0f59Ze1w4Uw_L77KtFc7V7zjbJJK09o
 
 
 {
-    "pedido": "3 latinhas heinekein"
+    "pedido": "Um pizza de calabresa e 2 heinekein"
 }
+
+
+###
+GET http://localhost:3003/client/requests/fd7e6e93-651f-43ff-95f6-ed5e45ece281

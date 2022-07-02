@@ -1,6 +1,5 @@
 const express = require('express')
 const cors = require('cors')
-const Authentication = require('./services/Authentication')
 const getAllUsers = require('./endpoints/getAllUsers')
 const createClient = require('./endpoints/createClient')
 const getClientById = require('./endpoints/getClientById')
@@ -10,6 +9,7 @@ const login = require('./endpoints/login')
 const createUser = require('./endpoints/createUser')
 const loginUser = require('./endpoints/loginUser')
 const createRequest = require('./endpoints/createRequest')
+const requestsByClient = require('./endpoints/requestsByClient')
 
 
 
@@ -20,6 +20,7 @@ app.use(cors())
 
 app.get('/clients', getAllUsers)
 app.get('/client/:id', getClientById)
+app.get('/client/requests/:id', requestsByClient)
 app.post('/client', createClient)
 app.post('/client/email', getClientByEmaail)
 app.post('/user/client', insertClients)
@@ -29,16 +30,6 @@ app.post('/user/login', loginUser)
 app.post('/user/request', createRequest)
 
 
-// const id = new Authentication().idGenerator()
-// console.log('Id:', id)
-// const hash = new Authentication().hash('senha')
-// console.log('CriptoSenha:', hash)
-// const compare = new Authentication().compare('senha', hash)
-// console.log(compare)
-// const token = new Authentication().token(id)
-// console.log('Token:', token)
-// const tokenData = new Authentication().tokenData(token)
-// console.log('Token data:', tokenData)
 
 
 

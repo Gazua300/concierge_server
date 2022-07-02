@@ -10,7 +10,7 @@ const createRequest = async(req, res)=>{
         const token = req.headers.authorization
         const tokenData = new Authentication().tokenData(token)
         const id = new Authentication().idGenerator()
-        const { pedido, mesa } = req.body
+        const { pedido } = req.body
 
         if(!token){
             statusCode = 401
@@ -32,22 +32,17 @@ const createRequest = async(req, res)=>{
             throw new Error('Cliente não encontrado')
         }
 
-
-        const [numero] = await con('concierge_pedidos').count('ordem').where({
-            cliente: cliente.id
-        })
-
-                
+                        
         await con('concierge_pedidos').insert({
             id,
             mesa: cliente.mesa,
             pedido,
-            ordem: Number(Object.values(numero)) + 1,
+            ordem: new Date().toLocaleTimeString(),
             cliente: cliente.id
         })
         
         
-        res.status(200).end()
+        res.status(200).end(`${pedido} para mesa ${cliente.mesa}`)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }
