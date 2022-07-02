@@ -6,7 +6,7 @@ const getClientById = async(req, res)=>{
     var statusCode = 400
     try{
         
-        const [cliente] = await con('concierge_clientes').where({
+        const [cliente] = await con('concierge').where({
             id: req.params.id
         })
 

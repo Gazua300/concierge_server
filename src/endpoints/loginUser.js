@@ -33,7 +33,7 @@ const loginUser = async(req, res)=>{
         }
 
 
-        res.status(200).send(user.id)        
+        res.status(200).send(usuario.id)        
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }
