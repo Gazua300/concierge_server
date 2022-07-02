@@ -50,10 +50,6 @@ GET http://localhost:3003/clients
 
 
 ###
-GET http://localhost:3003/users
-
-
-###
 GET http://localhost:3003/client/2a0502d5-52aa-4b7d-883d-27edada69897
 
 
@@ -82,7 +78,6 @@ Content-Type: application/json
 ###
 POST http://localhost:3003/user/request
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiNzg2NGI3NWItZTRlYS00ZmZhLTg5ZGQtYmU1Mzc2ZDFhNGYyIiwiaWF0IjoxNjU2NzUwMTA3LCJleHAiOjE2NTY3OTMzMDd9.xwuYItl2_3dGXy2VHdJxPLFq0rLWxRE8nq9UH8TmQHg
 
 
 {

@@ -26,7 +26,6 @@ const createUser = async(req, res)=>{
 
 
         const id = new Authentication().idGenerator()
-        const token = new Authentication().token(id)
         const hash = new Authentication().hash(senha)
 
 
@@ -38,7 +37,7 @@ const createUser = async(req, res)=>{
         })
 
 
-        res.status(200).send(token)
+        res.status(200).send(id)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }

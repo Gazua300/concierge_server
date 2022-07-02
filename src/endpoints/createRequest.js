@@ -7,8 +7,6 @@ const createRequest = async(req, res)=>{
     var statusCode = 400
     try{
 
-        const token = req.headers.authorization
-        const tokenData = new Authentication().tokenData(token)
         const id = new Authentication().idGenerator()
         const { pedido } = req.body
 
@@ -24,7 +22,7 @@ const createRequest = async(req, res)=>{
 
 
         const [cliente] = await con('concierge_usuarios').where({
-            id: tokenData.payload
+            id: req.params.id
         })
         
         if(!cliente){

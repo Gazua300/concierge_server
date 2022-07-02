@@ -7,6 +7,7 @@ const insertClients = async(req, res)=>{
     var statusCode = 400
     try{
 
+
         const { nome, mesa } = req.body
         
         
@@ -30,7 +31,7 @@ const insertClients = async(req, res)=>{
         })
                 
 
-        res.status(200).send(mesa)
+        res.status(200).send(id)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }
