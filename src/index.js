@@ -35,7 +35,7 @@ app.post('/user/client/:id', insertClients)
 app.post('/client/login', login)
 app.post('/user', createUser)
 app.post('/user/login', loginUser)
-app.post('/user/request', createRequest)
+app.post('/user/request/:id', createRequest)
 app.post('/cardapio/:id', insertCardapio)
 
 

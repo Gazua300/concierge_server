@@ -17,8 +17,8 @@ Content-Type: application/json
 
 
 {
-    "nome": "Flamarion",
-    "email": "fran@email.com",
+    "nome": "Ronaldo",
+    "email": "nado@email.com",
     "senha": "senha"
 }
 
@@ -29,7 +29,7 @@ Content-Type: application/json
 
 
 {
-    "email": "fran@email.com",
+    "email": "dog@email.com",
     "senha": "senha"
 }
 
@@ -50,7 +50,7 @@ GET http://localhost:3003/clients
 
 
 ###
-GET http://localhost:3003/client/2a0502d5-52aa-4b7d-883d-27edada69897
+GET http://localhost:3003/client/f183aa08-a481-4b2a-a437-6cdef8360547
 
 
 ###
@@ -66,22 +66,22 @@ Content-Type: application/json
 ###
 POST http://localhost:3003/user/client/f183aa08-a481-4b2a-a437-6cdef8360547
 Content-Type: application/json
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZDhkYmRlMTItNDg0NC00NGVlLThiNGItMDBiYjBjYTRkNWFhIiwiaWF0IjoxNjU2NzkxMTUwLCJleHAiOjE2NTY4MzQzNTB9.IIFvtuESwei-jfxzYUsvC0rQLf9Q2eoK3umqivZNnuE
 
 
 {
-    "nome": "Maria",
-    "mesa": 7    
+    "nome": "Ronaldo",
+    "mesa": 10    
 }
 
 
 ###
-POST http://localhost:3003/user/request
+POST http://localhost:3003/user/request/39510bac-9662-459a-8df9-749abb627d1f
 Content-Type: application/json
 
 
 {
-    "pedido": "3 doguinho e um refrigerante"
+    "pedido": "1 dogão e um refrigerante"
 }
 
 
@@ -91,20 +91,5 @@ GET http://localhost:3003/client/requests/fd7e6e93-651f-43ff-95f6-ed5e45ece281
 
 ###
 GET http://localhost:3003/client/place/f183aa08-a481-4b2a-a437-6cdef8360547
-
-
-###
-post http://localhost:3003/cardapio/b04ab7e7-7d08-442b-b728-7dead89f1bf5
-Content-Type: application/json
-
-
-{
-    "nome": "Whisky",
-    "ingredientes": "Teachers, old eight, black label, green label, red label, blue label, ballantines"
-}
-
-
-###
-get http://localhost:3003/cardapio/b04ab7e7-7d08-442b-b728-7dead89f1bf5
 
 

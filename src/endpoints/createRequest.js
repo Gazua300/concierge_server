@@ -9,11 +9,7 @@ const createRequest = async(req, res)=>{
 
         const id = new Authentication().idGenerator()
         const { pedido } = req.body
-
-        if(!token){
-            statusCode = 401
-            throw new Error('Token inválido, expirado ou ausente!')
-        }
+        
 
         if(!pedido){
             statusCode = 401
@@ -21,13 +17,13 @@ const createRequest = async(req, res)=>{
         }
 
 
-        const [cliente] = await con('concierge_usuarios').where({
+        const [cliente] = await con('concierge_clientes').where({
             id: req.params.id
         })
         
         if(!cliente){
             statusCode = 404
-            throw new Error('Cliente não encontrado')
+            throw new Error('Você ainda não é cliente')
         }
 
                         

@@ -7,7 +7,8 @@ const insertClients = async(req, res)=>{
     var statusCode = 400
     try{
 
-
+        const token = req.headers.authorization
+        const tokenData = new Authentication().tokenData(token)
         const { nome, mesa } = req.body
         
         
@@ -17,7 +18,9 @@ const insertClients = async(req, res)=>{
         }
 
 
-        const [usuario] = await con('concierge_usuarios')
+        const [usuario] = await con('concierge_usuarios').where({
+            id: token
+        })
 
 
         const id = new Authentication().idGenerator()       
