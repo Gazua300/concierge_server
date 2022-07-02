@@ -40,7 +40,7 @@ Content-Type: application/json
 
 
 {
-    "email": "fran@email.com",
+    "email": "dog@email.com",
     "senha": "senha"
 }
 
@@ -66,25 +66,31 @@ Content-Type: application/json
 ###
 POST http://localhost:3003/user/client
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZjE4M2FhMDgtYTQ4MS00YjJhLWE0MzctNmNkZWY4MzYwNTQ3IiwiaWF0IjoxNjU2NzI0MjY2LCJleHAiOjE2NTY3Njc0NjZ9.helDFuw3iJH8UWjydzmTE--A1DFbH6CiUB0gvqLtgJY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZjE4M2FhMDgtYTQ4MS00YjJhLWE0MzctNmNkZWY4MzYwNTQ3IiwiaWF0IjoxNjU2NzQ5OTY1LCJleHAiOjE2NTY3OTMxNjV9.KfRKT4K0Gyk9eR5598W252Y_kQ4oQ2W1Z9J5Ad5yeGk
 
 
 {
-    "nome": "Mario",
-    "mesa": 3    
+    "nome": "Maria",
+    "mesa": 7    
 }
 
 
 ###
 POST http://localhost:3003/user/request
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZmQ3ZTZlOTMtNjUxZi00M2ZmLTk1ZjYtZWQ1ZTQ1ZWNlMjgxIiwiaWF0IjoxNjU2NzQ3ODM2LCJleHAiOjE2NTY3OTEwMzZ9.g7xCTBMh1xwG0f59Ze1w4Uw_L77KtFc7V7zjbJJK09o
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiNzg2NGI3NWItZTRlYS00ZmZhLTg5ZGQtYmU1Mzc2ZDFhNGYyIiwiaWF0IjoxNjU2NzUwMTA3LCJleHAiOjE2NTY3OTMzMDd9.xwuYItl2_3dGXy2VHdJxPLFq0rLWxRE8nq9UH8TmQHg
 
 
 {
-    "pedido": "Um pizza de calabresa e 2 heinekein"
+    "pedido": "3 doguinho e um refrigerante"
 }
 
 
 ###
 GET http://localhost:3003/client/requests/fd7e6e93-651f-43ff-95f6-ed5e45ece281
+
+
+###
+GET http://localhost:3003/client/place/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZjE4M2FhMDgtYTQ4MS00YjJhLWE0MzctNmNkZWY4MzYwNTQ3IiwiaWF0IjoxNjU2NzQ5OTY1LCJleHAiOjE2NTY3OTMxNjV9.KfRKT4K0Gyk9eR5598W252Y_kQ4oQ2W1Z9J5Ad5yeGk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZjE4M2FhMDgtYTQ4MS00YjJhLWE0MzctNmNkZWY4MzYwNTQ3IiwiaWF0IjoxNjU2NzQ5OTY1LCJleHAiOjE2NTY3OTMxNjV9.KfRKT4K0Gyk9eR5598W252Y_kQ4oQ2W1Z9J5Ad5yeGk
+

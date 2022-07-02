@@ -10,6 +10,8 @@ const createUser = require('./endpoints/createUser')
 const loginUser = require('./endpoints/loginUser')
 const createRequest = require('./endpoints/createRequest')
 const requestsByClient = require('./endpoints/requestsByClient')
+const clientsByPlace = require('./endpoints/clientsByPlace')
+
 
 
 
@@ -21,6 +23,7 @@ app.use(cors())
 app.get('/clients', getAllUsers)
 app.get('/client/:id', getClientById)
 app.get('/client/requests/:id', requestsByClient)
+app.get('/client/place/:id', clientsByPlace)
 app.post('/client', createClient)
 app.post('/client/email', getClientByEmaail)
 app.post('/user/client', insertClients)
