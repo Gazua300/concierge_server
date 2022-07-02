@@ -27,7 +27,6 @@ const createClient = async(req, res)=>{
 
         const id = new Authentication().idGenerator()
         const hash = new Authentication().hash(senha)
-        const token = new Authentication().token(id)
 
 
         await con('concierge').insert({
@@ -41,7 +40,7 @@ const createClient = async(req, res)=>{
 
 
                 
-        res.status(200).send(token)
+        res.status(200).send(id)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }

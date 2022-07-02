@@ -26,7 +26,7 @@ const login = async(req, res)=>{
 
 
         const compare = new Authentication().compare(senha, user.senha)
-        const token = new Authentication().token(user.id)
+        
 
         if(!compare){
             statusCode = 404
@@ -34,7 +34,7 @@ const login = async(req, res)=>{
         }
 
 
-        res.status(200).send(token)
+        res.status(200).send(user.id)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }
