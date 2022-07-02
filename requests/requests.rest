@@ -1,0 +1,68 @@
+POST http://localhost:3003/client
+Content-Type: application/json
+
+
+{
+    "nome": "Chegue mais",
+    "email": "fran@email.com",
+    "senha": "senha",
+    "servico": "Bar e restaurante",
+    "responsavel": "Flamarion"
+}
+
+
+###
+post http://localhost:3003/user
+Content-Type: application/json
+
+
+{
+    "nome": "Flamarion",
+    "email": "fran@email.com",
+    "senha": "senha"
+}
+
+
+###
+POST http://localhost:3003/client/login
+Content-Type: application/json
+
+
+{
+    "email": "dog@email.com",
+    "senha": "se"
+}
+
+
+###
+GET http://localhost:3003/clients
+
+
+###
+GET http://localhost:3003/client/485cf076-48df-4b4f-a0e0-b20b8f82819d
+
+
+###
+POST http://localhost:3003/client/email
+Content-Type: application/json
+
+
+{
+    "email": "fran@email.com"
+}
+
+
+###
+POST http://localhost:3003/user/client
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiZjE4M2FhMDgtYTQ4MS00YjJhLWE0MzctNmNkZWY4MzYwNTQ3IiwiaWF0IjoxNjU2NzI0MjY2LCJleHAiOjE2NTY3Njc0NjZ9.helDFuw3iJH8UWjydzmTE--A1DFbH6CiUB0gvqLtgJY
+
+
+{
+    "nome": "Paulo",
+    "mesa": 5    
+}
+
+
+###
+post http://localhost:3003
