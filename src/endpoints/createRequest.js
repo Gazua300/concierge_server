@@ -42,7 +42,9 @@ const createRequest = async(req, res)=>{
             pedido,
             ordem: new Date().toLocaleTimeString(),
             cliente: user,
-            estabelecimento: req.params.id
+            estabelecimento: req.params.id,
+            clienteNome: cliente.nome,
+            estabelecimentoNome: estabelecimento.nome 
         })
         
         
