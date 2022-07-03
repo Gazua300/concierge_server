@@ -7,18 +7,29 @@ const insertClients = async(req, res)=>{
     var statusCode = 400
     try{
 
-        const token = req.headers.authorization
-        const tokenData = new Authentication().tokenData(token)
+        
         const id = new Authentication().idGenerator()
+        const { user } = req.body
+    
 
 
         const [usuario] = await con('concierge_usuarios').where({
-            id: tokenData.payload
+            id: user
         })
 
         if(!usuario){
             statusCode = 404
-            throw new Error('Cliente não encontrado. Algo pode ter dado errado a melhor opção e sair da sua conta e relogar novamente')
+            throw new Error('Usuário não encontrado')
+        }
+
+
+        const [estabelecimento] = await con('concierge').where({
+            id: req.params.id
+        })
+
+        if(!estabelecimento){
+            statusCode = 404
+            throw new Error('Estabelecimento inexistente no sistema')
         }
 
 
@@ -26,11 +37,12 @@ const insertClients = async(req, res)=>{
         await con(`concierge_clientes`).insert({
             id,
             nome: usuario.nome,
-            estabelecimento: req.params.id
+            estabelecimento: req.params.id,
+            user
         })
                 
 
-        res.status(200).send(id)
+        res.status(200).send(`Você tem um novo cliente`)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }

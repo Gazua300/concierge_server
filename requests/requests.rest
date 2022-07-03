@@ -65,7 +65,12 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3003/user/client/f183aa08-a481-4b2a-a437-6cdef8360547
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiYmQ3NmZlNjItNmRjNS00NzUwLWJiMmMtNTBhZWIzMDk5M2NkIiwiaWF0IjoxNjU2Nzk4NjM1LCJleHAiOjE2NTY4NDE4MzV9.RFlCJtrbtyocCohJWjAS2e35aGM8nw9P04tlfwpMpaI
+Content-Type: application/json
+
+
+{
+    "user": "bd76fe62-6dc5-4750-bb2c-50aeb30993cd"
+}
 
 
 ###
