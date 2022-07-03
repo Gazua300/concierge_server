@@ -8,7 +8,7 @@ const createRequest = async(req, res)=>{
     try{
 
         const id = new Authentication().idGenerator()
-        const { pedido } = req.body
+        const { pedido, user } = req.body
         
 
         if(!pedido){
@@ -18,7 +18,7 @@ const createRequest = async(req, res)=>{
 
 
         const [cliente] = await con('concierge_clientes').where({
-            id: req.params.id
+            user
         })
         
         if(!cliente){

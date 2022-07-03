@@ -68,12 +68,13 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:3003/user/request/39510bac-9662-459a-8df9-749abb627d1f
+POST http://localhost:3003/request/39510bac-9662-459a-8df9-749abb627d1f
 Content-Type: application/json
 
 
 {
-    "pedido": "1 dogão e um refrigerante"
+    "pedido": "1 dogão e um refrigerante",
+    "user": "0877c0bd-3cf2-4b95-8f6a-0accb731f842"
 }
 
 
