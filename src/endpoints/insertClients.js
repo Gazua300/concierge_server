@@ -23,6 +23,17 @@ const insertClients = async(req, res)=>{
         }
 
 
+        const [email] = await con('concierge_clientes').where({
+            email: usuario.email,
+            estabelecimento: req.params.id
+        })
+
+        if(email){
+            statusCode = 403
+            throw new Error('Você já é cliente')
+        }
+
+
         const [estabelecimento] = await con('concierge').where({
             id: req.params.id
         })
@@ -37,6 +48,7 @@ const insertClients = async(req, res)=>{
         await con(`concierge_clientes`).insert({
             id,
             nome: usuario.nome,
+            email: usuario.email,
             estabelecimento: req.params.id,
             user
         })

@@ -8,10 +8,10 @@ const createRequest = async(req, res)=>{
     try{
 
         const id = new Authentication().idGenerator()
-        const { pedido } = req.body
+        const { pedido, quantidade } = req.body
         
 
-        if(!pedido){
+        if(!pedido || !quantidade){
             statusCode = 401
             throw new Error('Preencha os campos')
         }
@@ -30,6 +30,7 @@ const createRequest = async(req, res)=>{
         await con('concierge_pedidos').insert({
             id,
             pedido,
+            quantidade,
             ordem: new Date().toLocaleTimeString(),
             cliente: cliente.id
         })

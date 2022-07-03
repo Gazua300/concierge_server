@@ -86,8 +86,8 @@ GET http://localhost:3003/client/place/f183aa08-a481-4b2a-a437-6cdef8360547
 
 
 ###
-get http://localhost:3003/cardapio/f183aa08-a481-4b2a-a437-6cdef8360547
+get http://localhost:3003/cardapio/user/2f926a78-689a-4c57-907f-3e9072c49fd1
 
 
 ###
-get http://localhost:3003/cardapio/user/7bade194-a3af-4792-a676-b366c067995a
+get http://localhost:3003/cardapio/place/f183aa08-a481-4b2a-a437-6cdef8360547

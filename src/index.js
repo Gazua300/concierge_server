@@ -24,11 +24,13 @@ app.use(express.json())
 app.use(cors())
 
 
+
+
 app.get('/clients', getAllUsers)
 app.get('/users', getAllClients)
 app.get('/client/:id', getClientById)
-app.get('/requests/:id', requestsByClient)
 app.get('/user/:id', getUserById)
+app.get('/requests/:id', requestsByClient)
 app.get('/place/:id', clientsByPlace)
 app.get('/cardapio/place/:id', cardapioByPlace)
 app.get('/cardapio/user/:id', cardapioById)
