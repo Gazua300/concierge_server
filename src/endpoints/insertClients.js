@@ -42,7 +42,7 @@ const insertClients = async(req, res)=>{
         })
                 
 
-        res.status(200).send(`Você tem um novo cliente`)
+        res.status(200).send(id)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }
