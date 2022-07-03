@@ -35,7 +35,7 @@ const createRequest = async(req, res)=>{
         })
         
         
-        res.status(200).end(`${pedido} para mesa ${cliente.mesa}`)
+        res.status(200).end(`Seu pedido de ${pedido} foi realizado`)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }
