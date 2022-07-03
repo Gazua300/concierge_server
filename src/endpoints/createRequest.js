@@ -16,16 +16,6 @@ const createRequest = async(req, res)=>{
             throw new Error('Preencha os campos')
         }
 
-
-        const [cliente] = await con('concierge_clientes').where({
-            user
-        })
-        
-        if(!cliente){
-            statusCode = 404
-            throw new Error('Você ainda não é cliente')
-        }
-
                         
         await con('concierge_pedidos').insert({
             id,

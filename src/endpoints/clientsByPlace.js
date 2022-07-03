@@ -1,5 +1,4 @@
 const con = require('../connection/connection')
-const Authentication = require('../services/Authentication')
 
 
 
@@ -7,7 +6,7 @@ const clientsByPlace = async(req, res)=>{
     var statusCode = 400
     try{
 
-        const clients = await con('concierge_clientes').where({
+        const clients = await con('concierge_pedidos').where({
             estabelecimento: req.params.id
         })
 

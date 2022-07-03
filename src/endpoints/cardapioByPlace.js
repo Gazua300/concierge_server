@@ -1,5 +1,4 @@
 const con = require('../connection/connection')
-const Authentication = require('../services/Authentication')
 
 
 
@@ -13,7 +12,7 @@ const cardapioByPlace = async(req, res)=>{
 
         if(!cardapio){
             statusCode = 404
-            throw new Error('Estabelecimento inexistente')
+            throw new Error('Estabelecimento não encontrado')
         }
 
         
