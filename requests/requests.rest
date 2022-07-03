@@ -54,13 +54,7 @@ GET http://localhost:3003/client/f183aa08-a481-4b2a-a437-6cdef8360547
 
 
 ###
-POST http://localhost:3003/client/email
-Content-Type: application/json
-
-
-{
-    "email": "fran@email.com"
-}
+GET http://localhost:3003/user/0877c0bd-3cf2-4b95-8f6a-0accb731f842
 
 
 ###

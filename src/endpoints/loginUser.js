@@ -14,11 +14,10 @@ const loginUser = async(req, res)=>{
             throw new Error('Preencha os campos')
         }
 
-
+        
         const [usuario] = await con('concierge_usuarios').where({
             email
         })
-
         if(!usuario){
             statusCode = 404
             throw new Error('Usuário não encontrado')

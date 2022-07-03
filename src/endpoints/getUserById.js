@@ -1,20 +1,12 @@
 const con = require('../connection/connection')
 
 
-const getClientByEmail = async(req, res)=>{
+const getUserById = async(req, res)=>{
     var statusCode = 400
     try{
 
-        const { email } = req.body
-
-        if(!email){
-            statusCode = 401
-            throw new Error('Preencha o campo')
-        }
-
-
-        const [client] = await con('concierge').where({
-            email
+        const [client] = await con('concierge_usuarios').where({
+            id: req.params.id
         })
 
         if(!client){
@@ -29,4 +21,4 @@ const getClientByEmail = async(req, res)=>{
     }
 }
 
-module.exports = getClientByEmail
+module.exports = getUserById

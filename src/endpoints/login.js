@@ -18,7 +18,7 @@ const login = async(req, res)=>{
         const [user] = await con('concierge').where({
             email
         })
-
+        
         if(!email){
             statusCode = 404
             throw new Error('Usuário não encontrado')
