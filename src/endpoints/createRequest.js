@@ -29,7 +29,6 @@ const createRequest = async(req, res)=>{
                         
         await con('concierge_pedidos').insert({
             id,
-            mesa: cliente.mesa,
             pedido,
             ordem: new Date().toLocaleTimeString(),
             cliente: cliente.id
