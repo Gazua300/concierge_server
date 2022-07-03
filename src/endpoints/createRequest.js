@@ -16,12 +16,33 @@ const createRequest = async(req, res)=>{
             throw new Error('Preencha os campos')
         }
 
+
+        const [cliente] = await con('concierge_usuarios').where({
+            id: user
+        })
+
+        if(!cliente){
+            statusCode = 404
+            throw new Error('Desculpe, você não é um cliente cadastrado')
+        }
+
+
+        const [estabelecimento] = await con('concierge').where({
+            id: req.params.id
+        })
+
+        if(!estabelecimento){
+            statusCode = 404
+            throw new Error('Desculpe, mas seu estabelecimento ainda não é cadastrado')
+        }
+
                         
         await con('concierge_pedidos').insert({
             id,
             pedido,
             ordem: new Date().toLocaleTimeString(),
-            cliente: user
+            cliente: user,
+            estabelecimento: req.params.id
         })
         
         
