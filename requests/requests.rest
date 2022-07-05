@@ -62,6 +62,10 @@ GET http://localhost:3003/user/0877c0bd-3cf2-4b95-8f6a-0accb731f842
 DELETE http://localhost:3003/request/8cfe4b92-dfb5-4ee1-9a7d-4b47a9eeec27
 
 
+###
+DELETE http://localhost:3003/cardapio/4ea47ca8-4390-4ef2-9c23-6936436072be
+
+
 
 ###
 POST http://localhost:3003/request/941a7357-0283-45dc-9839-36ea995744e9
