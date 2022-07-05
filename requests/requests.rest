@@ -118,3 +118,23 @@ Content-Type: application/json
     "nome": "Atualizar usuário",
     "email": "atualizar@email.com"
 }
+
+
+###
+POST http://localhost:3003/clientauth/f183aa08-a481-4b2a-a437-6cdef8360547
+Content-Type: application/json
+
+
+{
+    "senha": "senha"
+}
+
+
+###
+POST http://localhost:3003/userauth/f183aa08-a481-4b2a-a437-6cdef8360547
+Content-Type: application/json
+
+
+{
+    "senha": "senha"
+}
