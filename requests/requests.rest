@@ -58,13 +58,8 @@ GET http://localhost:3003/user/0877c0bd-3cf2-4b95-8f6a-0accb731f842
 
 
 ###
-POST http://localhost:3003/user/client/f183aa08-a481-4b2a-a437-6cdef8360547
-Content-Type: application/json
+DELETE http://localhost:3003/request/8cfe4b92-dfb5-4ee1-9a7d-4b47a9eeec27
 
-
-{
-    "user": "bd76fe62-6dc5-4750-bb2c-50aeb30993cd"
-}
 
 
 ###
