@@ -8,10 +8,10 @@ const createRequest = async(req, res)=>{
     try{
 
         const id = new Authentication().idGenerator()
-        const { pedido, user } = req.body
+        const { pedido, user, mesa } = req.body
         
 
-        if(!pedido){
+        if(!pedido || !mesa){
             statusCode = 401
             throw new Error('Preencha os campos')
         }
@@ -23,7 +23,7 @@ const createRequest = async(req, res)=>{
 
         if(!cliente){
             statusCode = 404
-            throw new Error('Desculpe, você não é um cliente cadastrado')
+            throw new Error('Desculpe, você não é um cliente cadastrado no aplicativo')
         }
 
 
@@ -33,9 +33,27 @@ const createRequest = async(req, res)=>{
 
         if(!estabelecimento){
             statusCode = 404
-            throw new Error('Desculpe, mas seu estabelecimento ainda não é cadastrado')
+            throw new Error('Desculpe, mas seu estabelecimento ainda não é cadastrado no aplicativo')
         }
 
+        
+        if(mesa > estabelecimento.mesas){
+            statusCode = 403
+            throw new Error(`Desculpe, mas não há mesa ${mesa} em nosso estabelecimento`)
+        }
+
+
+        const [ocupada] = await con('concierge_pedidos').where({
+            mesa
+        })
+
+        if(ocupada){
+            if(ocupada.cliente !== user){
+                statusCode = 403
+                throw new Error(`Desculpe mas a mesa ${mesa} já está ocupada`)
+            }
+        }       
+                
                         
         await con('concierge_pedidos').insert({
             id,
@@ -44,10 +62,11 @@ const createRequest = async(req, res)=>{
             cliente: user,
             estabelecimento: req.params.id,
             clienteNome: cliente.nome,
-            estabelecimentoNome: estabelecimento.nome 
+            estabelecimentoNome: estabelecimento.nome,
+            mesa 
         })
-        
-        
+
+                
         res.status(200).end(`Seu pedido de ${pedido} foi realizado`)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)

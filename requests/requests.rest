@@ -3,11 +3,12 @@ Content-Type: application/json
 
 
 {
-    "nome": "Chegue mais",
-    "email": "fran@email.com",
+    "nome": "TEste de mesas",
+    "email": "teste@email.com",
     "senha": "senha",
     "servico": "Bar e restaurante",
-    "responsavel": "Flamarion"
+    "responsavel": "Flamarion",
+    "mesas": 10
 }
 
 
@@ -63,13 +64,14 @@ DELETE http://localhost:3003/request/8cfe4b92-dfb5-4ee1-9a7d-4b47a9eeec27
 
 
 ###
-POST http://localhost:3003/request/f183aa08-a481-4b2a-a437-6cdef8360547
+POST http://localhost:3003/request/941a7357-0283-45dc-9839-36ea995744e9
 Content-Type: application/json
 
 
 {
     "pedido": "1 dogão e um refrigerante",
-    "user": "0877c0bd-3cf2-4b95-8f6a-0accb731f842"
+    "user": "0877c0bd-3cf2-4b95-8f6a-0accb731f842",
+    "mesa": 2
 }
 
 
