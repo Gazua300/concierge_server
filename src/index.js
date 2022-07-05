@@ -16,6 +16,8 @@ const cardapioByPlace = require('./endpoints/cardapioByPlace')
 const cardapioById = require('./endpoints/cardapioById')
 const delRequest = require('./endpoints/delRequest')
 const delCardapio = require('./endpoints/delCardapio')
+const editClient = require('./endpoints/editClient')
+const editUser = require('./endpoints/editUser')
 
 
 
@@ -43,6 +45,8 @@ app.post('/request/:id', createRequest)
 app.post('/cardapio/:id', insertCardapio)
 app.delete('/request/:id', delRequest)
 app.delete('/cardapio/:id', delCardapio)
+app.put('/client/:id', editClient)
+app.put('/user/:id', editUser)
 
 
 
