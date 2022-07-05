@@ -19,7 +19,7 @@ const login = async(req, res)=>{
             email
         })
         
-        if(!email){
+        if(!user){
             statusCode = 404
             throw new Error('Usuário não encontrado')
         }
