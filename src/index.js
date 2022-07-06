@@ -21,6 +21,8 @@ const userAuth = require('./endpoints/userAuth')
 
 const delRequest = require('./endpoints/delRequest')
 const delCardapio = require('./endpoints/delCardapio')
+const delUser = require('./endpoints/delUser')
+const delClient = require('./endpoints/delClient')
 
 const editClient = require('./endpoints/editClient')
 const editUser = require('./endpoints/editUser')
@@ -53,6 +55,8 @@ app.post('/clientauth/:id', clientAuth)
 app.post('/userauth/:id', userAuth)
 app.delete('/request/:id', delRequest)
 app.delete('/cardapio/:id', delCardapio)
+app.delete('/user/:id', delUser)
+app.delete('/client/:id', delClient)
 app.put('/client/:id', editClient)
 app.put('/user/:id', editUser)
 

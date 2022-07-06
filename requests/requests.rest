@@ -6,8 +6,8 @@ Content-Type: application/json
     "nome": "TEste de mesas",
     "email": "teste@email.com",
     "senha": "senha",
-    "servico": "Bar e restaurante",
-    "responsavel": "Flamarion",
+    "servico": "Teste em massa",
+    "responsavel": "TEster",
     "mesas": 10
 }
 
@@ -138,3 +138,11 @@ Content-Type: application/json
 {
     "senha": "senha"
 }
+
+
+###
+DELETE http://localhost:3003/user/e98fd341-2e12-4210-b451-e77b91a56c84
+
+
+###
+DELETE http://localhost:3003/client/f183aa08-a481-4b2a-a437-6cdef8360547
