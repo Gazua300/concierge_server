@@ -53,12 +53,15 @@ const createRequest = async(req, res)=>{
                 throw new Error(`Desculpe mas a mesa ${mesa} já está ocupada`)
             }
         }       
-                
+        
+        
+        const d = new Date()
+        const current = `${d.getHours()}:${d.getMinutes()}`
                         
         await con('concierge_pedidos').insert({
             id,
             pedido,
-            ordem: new Date().toLocaleTimeString('pt-br'),
+            ordem: current,
             cliente: user,
             estabelecimento: req.params.id,
             clienteNome: cliente.nome,
