@@ -21,7 +21,7 @@ const login = async(req, res)=>{
         
         if(!user){
             statusCode = 404
-            throw new Error('Usuário não encontrado')
+            throw new Error('Cliente não encontrado')
         }
 
 

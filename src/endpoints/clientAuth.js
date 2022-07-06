@@ -9,6 +9,11 @@ const clientAuth = async(req, res)=>{
 
         const { senha } = req.body
 
+        if(!senha){
+            statusCode = 401
+            throw new Error('Você precisa digitar sua senha!')
+        }
+
 
         const [cliente] = await con('concierge').where({
             id: req.params.id

@@ -11,7 +11,7 @@ const getUserById = async(req, res)=>{
 
         if(!client){
             statusCode = 404
-            throw new Error('Cliente não encontrado')
+            throw new Error('Usuário não encontrado')
         }
 
 
