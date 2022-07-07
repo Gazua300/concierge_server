@@ -23,7 +23,7 @@ const createRequest = async(req, res)=>{
 
         if(!cliente){
             statusCode = 404
-            throw new Error('Desculpe, você não é um cliente cadastrado no aplicativo')
+            throw new Error('Desculpe, você não é um usuário cadastrado no aplicativo')
         }
 
 
@@ -55,13 +55,11 @@ const createRequest = async(req, res)=>{
         }       
         
         
-        const d = new Date()
-        const current = `${d.getHours()}:${d.getMinutes()}`
-                        
+                                
         await con('concierge_pedidos').insert({
             id,
             pedido,
-            ordem: current,
+            ordem: new Date(),
             cliente: user,
             estabelecimento: req.params.id,
             clienteNome: cliente.nome,
