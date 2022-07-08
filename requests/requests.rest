@@ -5,6 +5,7 @@ Content-Type: application/json
 {
     "nome": "Teste de mesas",
     "email": "teste@email.com",
+    "contato": 1234567890,
     "senha": "senha",
     "servico": "Teste em massa",
     "responsavel": "Tester",
@@ -104,6 +105,8 @@ Content-Type: application/json
 {
     "nome": "Teste de atulalização",
     "email": "teste@email.com",
+    "endereco": "Rua tal",
+    "contato": 1234567891,
     "servico": "Teste atualizado",
     "responsavel": "Tester",
     "mesas": 10
