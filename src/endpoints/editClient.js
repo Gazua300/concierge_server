@@ -21,25 +21,25 @@ const editClient = async(req, res)=>{
         }
 
 
-        // const [cliente] = await con('concierge').where({
-        //     id: req.params.id
-        // })
+        const [cliente] = await con('concierge').where({
+            id: req.params.id
+        })
 
-        // if(!cliente){
-        //     statusCode = 404
-        //     throw new Error('Cliente não encontrado')
-        // }
+        if(!cliente){
+            statusCode = 404
+            throw new Error('Cliente não encontrado')
+        }
 
 
-        // await con('concierge').update({
-        //     nome,
-        //     email,
-        //     servico,
-        //     responsavel,
-        //     mesas
-        // }).where({
-        //     id: req.params.id
-        // })
+        await con('concierge').update({
+            nome,
+            email,
+            servico,
+            responsavel,
+            mesas
+        }).where({
+            id: req.params.id
+        })
         
 
         res.status(200).send('Cadastro atualizado com sucesso!')
