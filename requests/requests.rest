@@ -3,12 +3,13 @@ Content-Type: application/json
 
 
 {
-    "nome": "TEste de mesas",
+    "nome": "Teste de mesas",
     "email": "teste@email.com",
     "senha": "senha",
     "servico": "Teste em massa",
-    "responsavel": "TEster",
-    "mesas": 10
+    "responsavel": "Tester",
+    "mesas": 10,
+    "endereco": "Rua do teste 116, Bairro-Estado"
 }
 
 

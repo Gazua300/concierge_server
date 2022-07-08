@@ -7,9 +7,9 @@ const createClient = async(req, res)=>{
     var statusCode = 400
     try{
 
-        const { nome, email, senha, servico, responsavel, mesas, endereco } = req.body
+        const { nome, email, senha, servico, responsavel, mesas, endereco, contato } = req.body
 
-        if(!nome || !email || !senha || !servico || !responsavel || !mesas || !endereco){
+        if(!nome || !email || !senha || !servico || !responsavel || !mesas || !endereco || !contato){
             statusCode = 401
             throw new Error('Preencha os campos')
         }
@@ -37,7 +37,8 @@ const createClient = async(req, res)=>{
             servico,
             responsavel,
             mesas,
-            endereco
+            endereco,
+            contato
         })
 
 
