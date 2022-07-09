@@ -74,7 +74,8 @@ const createRequest = async(req, res)=>{
             clienteNome: cliente.nome,
             estabelecimentoNome: estabelecimento.nome,
             mesa,
-            total: pedido.preco * quantidade 
+            total: pedido.preco * quantidade,
+            preco: pedido.preco
         })
 
                 
