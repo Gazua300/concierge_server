@@ -24,7 +24,7 @@ const keyRescue = async(req, res)=>{
 
         if(!email){
             statusCode = 404
-            throw new Error('Cliente não encontrado')
+            throw new Error('Cliente não encontrado. Este email não consta nos registros')
         }
 
         
@@ -37,13 +37,16 @@ const keyRescue = async(req, res)=>{
             }
           });
 
-        await transport.sendMail({
-            from: 'botofmine@gmail.com',
-            to: email.email,
+        const emailContent = {
+            from: process.env.NODEMAILER_USER,
+            to: userEmail,
             subject: "testando nodemailer",
             text: "Exmplo",
             html: "<a href='https://facebook.com'>Redefinier senha</a>"
-        })
+        }
+
+          
+        await transport.sendMail(emailContent)
 
 
         res.status(200).send(`Verifique sua caixa de entrada`)
