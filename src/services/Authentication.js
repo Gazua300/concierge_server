@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
 
+
 dotenv.config()
 
 
@@ -40,7 +41,6 @@ class Authentication{
             process.env.JWT_KEY
         )
     }
-
 
 }
 

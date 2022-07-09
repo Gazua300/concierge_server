@@ -36,7 +36,9 @@ const editClient = async(req, res)=>{
             email,
             servico,
             responsavel,
-            mesas
+            mesas,
+            endereco,
+            contato
         }).where({
             id: req.params.id
         })

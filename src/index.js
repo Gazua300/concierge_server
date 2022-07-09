@@ -26,6 +26,7 @@ const delClient = require('./endpoints/delClient')
 
 const editClient = require('./endpoints/editClient')
 const editUser = require('./endpoints/editUser')
+const keyRescue = require('./endpoints/keyRescue')
 
 
 
@@ -59,6 +60,7 @@ app.delete('/user/:id', delUser)
 app.delete('/client/:id', delClient)
 app.put('/client/:id', editClient)
 app.put('/user/:id', editUser)
+app.put('/rescuepassword/:id', keyRescue)
 
 
 
