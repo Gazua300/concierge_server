@@ -8,9 +8,9 @@ const insertCardapio = async(req, res)=>{
     try{
 
         const id = new Authentication().idGenerator()
-        const { nome, ingredientes } = req.body
+        const { nome, preco } = req.body
 
-        if(!nome || !ingredientes){
+        if(!nome || !preco){
             statusCode = 401
             throw new Error('Preencha os campos')
         }
@@ -29,7 +29,7 @@ const insertCardapio = async(req, res)=>{
         await con('concierge_cardapio').insert({
             id,
             nome,
-            ingredientes,
+            preco,
             estabelecimento: client.id
         })
 

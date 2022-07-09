@@ -68,6 +68,15 @@ DELETE http://localhost:3003/request/2074f183-46ea-4577-9e74-80244c8ec806
 DELETE http://localhost:3003/cardapio/4ea47ca8-4390-4ef2-9c23-6936436072be
 
 
+###
+POST http://localhost:3003/cardapio/70d1f2da-9f27-4d81-85cb-66e404002fb0
+Content-Type: application/json
+
+{
+    "nome": "Heinekei",
+    "preco": 7
+}
+
 
 ###
 POST http://localhost:3003/request/2074f183-46ea-4577-9e74-80244c8ec806
