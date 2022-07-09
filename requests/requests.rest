@@ -79,14 +79,14 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:3003/request/2074f183-46ea-4577-9e74-80244c8ec806
+POST http://localhost:3003/request/53b004ac-8fe7-499d-8c21-861a39abbad1
 Content-Type: application/json
 
 
 {
-    "pedido": "1 dogão e um refrigerante",
-    "user": "62094ee1-91c2-4832-b738-66fb184bc738",
-    "mesa": 2
+    "user": "7a6a8e36-9f43-4312-89a3-03ae1b4172fa",
+    "mesa": 2,
+    "quantidade": 4
 }
 
 

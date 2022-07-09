@@ -8,10 +8,18 @@ const createRequest = async(req, res)=>{
     try{
 
         const id = new Authentication().idGenerator()
-        const { pedido, user, mesa } = req.body
+        const { user, mesa, quantidade } = req.body
+        const [pedido] = await con('concierge_cardapio').where({
+            id: req.params.id
+        })
+
+        if(!pedido){
+            statusCode = 404
+            throw new Error('Produto não encontrado')
+        }
         
 
-        if(!pedido || !mesa){
+        if(!mesa || !quantidade){
             statusCode = 401
             throw new Error('Preencha os campos')
         }
@@ -23,17 +31,17 @@ const createRequest = async(req, res)=>{
 
         if(!cliente){
             statusCode = 404
-            throw new Error('Desculpe, você não é um usuário cadastrado no aplicativo')
+            throw new Error('Cliente não encontrado')
         }
 
 
         const [estabelecimento] = await con('concierge').where({
-            id: req.params.id
+            id: pedido.estabelecimento
         })
 
         if(!estabelecimento){
             statusCode = 404
-            throw new Error('Desculpe, mas seu estabelecimento ainda não é cadastrado no aplicativo')
+            throw new Error('Estabelecimento não encontrado')
         }
 
         
@@ -58,7 +66,8 @@ const createRequest = async(req, res)=>{
                                 
         await con('concierge_pedidos').insert({
             id,
-            pedido,
+            pedido: pedido.nome,
+            quantidade,
             ordem: new Date(),
             cliente: user,
             estabelecimento: req.params.id,
@@ -68,7 +77,7 @@ const createRequest = async(req, res)=>{
         })
 
                 
-        res.status(200).end(`Seu pedido de ${pedido} foi realizado`)
+        res.status(200).end(`Seu pedido de ${pedido.nome} foi realizado`)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }
