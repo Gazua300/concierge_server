@@ -86,7 +86,7 @@ Content-Type: application/json
 {
     "user": "7a6a8e36-9f43-4312-89a3-03ae1b4172fa",
     "mesa": 2,
-    "quantidade": 4
+    "quantidade": 10
 }
 
 
