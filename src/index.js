@@ -54,13 +54,13 @@ app.post('/request/:id', createRequest)
 app.post('/cardapio/:id', insertCardapio)
 app.post('/clientauth/:id', clientAuth)
 app.post('/userauth/:id', userAuth)
+app.post('/rescuepassword/', keyRescue)
 app.delete('/request/:id', delRequest)
 app.delete('/cardapio/:id', delCardapio)
 app.delete('/user/:id', delUser)
 app.delete('/client/:id', delClient)
 app.put('/client/:id', editClient)
 app.put('/user/:id', editUser)
-app.put('/rescuepassword/:id', keyRescue)
 
 
 

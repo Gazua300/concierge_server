@@ -10,16 +10,22 @@ const keyRescue = async(req, res)=>{
     var statusCode = 400
     try{
 
+        const { userEmail } = req.body              
+
+        if(!userEmail){
+            statusCode = 404
+            throw new Error('Preencha o campo email')
+        }
+
+
         const [email] = await con('concierge').where({
-            id: req.params.id
+            email: userEmail
         })
 
         if(!email){
             statusCode = 404
             throw new Error('Cliente não encontrado')
         }
-
-        const hideMail = `***${email.email.substring(6)}`
 
         
         const transport = nodemailer.createTransport({
@@ -40,7 +46,7 @@ const keyRescue = async(req, res)=>{
         })
 
 
-        res.status(200).send(`Verifique a caixa de entrada de ${hideMail}`)
+        res.status(200).send(`Verifique sua caixa de entrada`)
     }catch(e){
         res.status(statusCode).send(e.message || e.sqlMessage)
     }
