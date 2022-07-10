@@ -16,7 +16,7 @@ const createClient = async(req, res)=>{
 
         const arr = String(contato).split('')
         
-        if(arr.length !== 10){
+        if(arr.length !== 11){
             statusCode = 401
             throw new Error('Número de telelfone inválido!')
         }
