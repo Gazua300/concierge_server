@@ -56,7 +56,7 @@ const createRequest = async(req, res)=>{
         })
 
         if(ocupada){
-            if(ocupada.cliente !== user){
+            if(ocupada.cliente !== user && ocupada.estabelecimento === estabelecimento.id){
                 statusCode = 403
                 throw new Error(`Desculpe mas a mesa ${mesa} já está ocupada`)
             }
