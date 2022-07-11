@@ -12,7 +12,7 @@ const cardapioById = async(req, res)=>{
 
         if(!cardapio){
             statusCode = 404
-            throw new Error('Item não encontrado')
+            throw new Error('Produto não encontrado')
         }
         
 

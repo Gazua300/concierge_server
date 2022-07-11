@@ -91,11 +91,11 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3003/client/requests/fd7e6e93-651f-43ff-95f6-ed5e45ece281
+GET http://localhost:3003/requests/fd7e6e93-651f-43ff-95f6-ed5e45ece281
 
 
 ###
-GET http://localhost:3003/client/place/f183aa08-a481-4b2a-a437-6cdef8360547
+GET http://localhost:3003/place/440763b0-b8ba-43fc-879a-134e3c5a05c1
 
 
 ###
@@ -103,7 +103,7 @@ get http://localhost:3003/cardapio/user/2f926a78-689a-4c57-907f-3e9072c49fd1
 
 
 ###
-get http://localhost:3003/cardapio/place/f183aa08-a481-4b2a-a437-6cdef8360547
+get http://localhost:3003/cardapio/place/70d1f2da-9f27-4d81-85cb-66e404002fb0
 
 
 ###

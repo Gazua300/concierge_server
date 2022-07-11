@@ -10,9 +10,9 @@ const cardapioByPlace = async(req, res)=>{
             estabelecimento: req.params.id
         })
 
-        if(!cardapio){
+        if(cardapio.length === 0){
             statusCode = 404
-            throw new Error('Estabelecimento não encontrado')
+            throw new Error('Estabelecimento ainda não inseriu o cardápio')
         }
 
         

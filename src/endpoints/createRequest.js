@@ -70,7 +70,7 @@ const createRequest = async(req, res)=>{
             quantidade,
             ordem: new Date(),
             cliente: user,
-            estabelecimento: req.params.id,
+            estabelecimento: estabelecimento.id,
             clienteNome: cliente.nome,
             estabelecimentoNome: estabelecimento.nome,
             mesa,
